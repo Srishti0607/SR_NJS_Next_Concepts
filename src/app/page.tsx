@@ -1,103 +1,49 @@
-import Image from "next/image";
+import Link from 'next/link';
 
-export default function Home() {
+const SectionLanding = () => {
+  const sections = [
+    { label: "Section 3", path: "/section3", title: "Creating Components in Many Ways" },
+    { label: "Section 4", path: "/section4", title: "Working with build-in directives" },
+    { label: "Section 5", path: "/section5", title: "Two Way Binding" },
+    { label: "Section 6", path: "/section6", title: "Build In Pipe" },
+    { label: "Section 7", path: "/section7", title: "Rest API Example" },
+    { label: "Section 8", path: "/section8", title: "Shopping Cart Demo" },
+    { label: "Section 9", path: "/section9", title: "Service Demo" },
+    { label: "Section 10", path: "/section10", title: "Parent Child Component Demo" },
+    { label: "Section 11", path: "/section11", title: "Custom Directives" },
+    { label: "Section 12", path: "/section12", title: "Template Driven Approach Demo" },
+    { label: "Section 13", path: "/section13", title: "Sub Total/Running total Demo" },
+    { label: "Section 14", path: "/section14", title: "Route Parameters Demo" },
+    { label: "Section 15", path: "/section15", title: "Reative Forms Approach Demo" },
+    { label: "Section 16", path: "/section16", title: "Pagination Sorting Search Demo" },
+    { label: "Section 17", path: "/section17", title: "Orders with Accordion Functionality Demo" },
+    { label: "Section 18", path: "/section18", title: "Multi Level Accordion Demo" },
+    { label: "Section 19", path: "/section19", title: "Export to File Formats Demo" },
+    { label: "Section 20", path: "/section20", title: "Custom Pipes Demo" },
+    { label: "Section 21", path: "/section21", title: "Cruddemo Listview Demo" },
+    { label: "Section 22", path: "/section22", title: "Cookies Demo" },
+    { label: "Section 23", path: "/section23", title: "Bulk Update Demo" },
+    { label: "Section 24", path: "/section24", title: "Bulk Insert Demo" },
+    { label: "Section 25", path: "/section25", title: "BehSub Parent/Child Demo" },
+    { label: "Section 26", path: "/section26", title: "Behaviour Subject Demo" },
+    { label: "Section 27", path: "/section27", title: "API Consumer Demo" },
+    { label: "Section 28", path: "/section28", title: "Not Found Demo" },
+  ];
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-sr-njs-next-concepts&utm_medium=appdir-template-tw&utm_campaign=create-sr-njs-next-concepts"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-sr-njs-next-concepts&utm_medium=appdir-template-tw&utm_campaign=create-sr-njs-next-concepts"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-sr-njs-next-concepts&utm_medium=appdir-template-tw&utm_campaign=create-sr-njs-next-concepts"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-sr-njs-next-concepts&utm_medium=appdir-template-tw&utm_campaign=create-sr-njs-next-concepts"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-sr-njs-next-concepts&utm_medium=appdir-template-tw&utm_campaign=create-sr-njs-next-concepts"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+    <div className="section-root p-6">
+      <div className="sections-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {sections.map((section) => (
+          <div key={section.path} className="sections border p-4 rounded-lg shadow-md">
+            <label className="text-xl font-bold">{section.label}</label>
+            <Link href={section.path} className="text-blue-500 hover:underline mt-2 block">
+              {section.title}
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
-}
+};
+
+export default SectionLanding;
